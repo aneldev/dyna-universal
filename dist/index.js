@@ -85,6 +85,11 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isNode = () => !!(typeof process !== 'undefined' && process.versions && process.versions.node);
 exports.isBrowser = () => !exports.isNode();
+let env = (typeof window !== 'undefined') && window || global;
+exports.env = env;
+env.env = env;
+env.isNode = exports.isNode();
+env.isBrowser = !env.isNode;
 
 
 /***/ }),
