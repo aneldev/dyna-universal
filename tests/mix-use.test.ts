@@ -8,7 +8,7 @@ import {
   isNode as duIsNode
 } from '../src';
 
-describe('Dyna Universal tools', () => {
+describe('Dyna Universal tools - mix use', () => {
 	it('should return a value isBrowser()', () => {
 		expect(duIsBrowser()).not.toBe(undefined);
 		expect(duIsBrowser()).not.toBe(null);
