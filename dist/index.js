@@ -83,9 +83,9 @@ return /******/ (function(modules) { // webpackBootstrap
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isNode = () => !!(typeof process !== 'undefined' && process.versions && process.versions.node);
-exports.isBrowser = () => !exports.isNode();
-let env = (typeof window !== 'undefined') && window || global;
+exports.isNode = function () { return !!(typeof process !== 'undefined' && process.versions && process.versions.node); };
+exports.isBrowser = function () { return !exports.isNode(); };
+var env = (typeof window !== 'undefined') && window || global;
 exports.env = env;
 env.env = env;
 env.isNode = exports.isNode();

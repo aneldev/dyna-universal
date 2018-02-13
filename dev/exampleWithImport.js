@@ -1,4 +1,4 @@
-import {env, isBrowser, isNode} from '../src';
+import {env, isBrowser, isNode} from '../src/index';
 
 // we import the `env`
 env;            // is the node.js's global or browser's window
