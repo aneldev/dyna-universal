@@ -1,24 +1,29 @@
-declare const jasmine: any, describe:any, expect:any, it: any;
+declare const jasmine: any, describe: any, expect: any, it: any;
 if (typeof jasmine !== 'undefined') jasmine.DEFAULT_TIMEOUT_INTERVAL = 5000;
 
-declare const env:any, isNode: boolean, isBrowser: boolean;
-
+// import the dependency
 import '../../src/index';
 
+// import the type only but not the references, they should be on global object
+import {DynaUniversal} from "../../src";
+
+// declare the types only
+declare const dynaUniversal: DynaUniversal;
+
 describe('Dyna Universal tools - global use', () => {
-	it('should have a value isBrowser()', () => {
-		expect(isBrowser).not.toBe(undefined);
-		expect(isBrowser).not.toBe(null);
-	});
-	it('should have a value isNode()', () => {
-		expect(isNode).not.toBe(undefined);
-		expect(isNode).not.toBe(null);
-	});
-	it('should have correct value the isBrowser() && isNode()', () => {
-		expect(isNode).not.toBe(isBrowser);
-	});
-	it('should have the global `env`', () => {
-		expect(env).not.toBe(null);
-		expect(env).not.toBe(undefined);
-	});
+  it('should have a value isBrowser()', () => {
+    expect(dynaUniversal.isBrowser).not.toBe(undefined);
+    expect(dynaUniversal.isBrowser).not.toBe(null);
+  });
+  it('should have a value isNode()', () => {
+    expect(dynaUniversal.isNode).not.toBe(undefined);
+    expect(dynaUniversal.isNode).not.toBe(null);
+  });
+  it('should have correct value the isBrowser() && isNode()', () => {
+    expect(dynaUniversal.isNode).not.toBe(dynaUniversal.isBrowser);
+  });
+  it('should have the global `env`', () => {
+    expect(dynaUniversal).not.toBe(null);
+    expect(dynaUniversal).not.toBe(undefined);
+  });
 });

@@ -1,10 +1,31 @@
-declare const global: any, window: any, process: any;
+import Global = NodeJS.Global;
+import Process = NodeJS.Process;
 
-export const isNode: () => boolean = () => !!(typeof process !== 'undefined' && process.versions && process.versions.node);
-export const isBrowser: () => boolean = () => !isNode();
+declare const global: Global, window: Window, process: Process;
 
-let env: any = (typeof window !== 'undefined') && window || global;
-env.env = env;
-env.isNode = isNode();
-env.isBrowser = !env.isNode;
-export {env};
+export class DynaUniversal {
+  private _isNode: boolean = !!(typeof process !== 'undefined' && process.versions && process.versions.node);
+  private _global: Window | Global = (typeof window !== 'undefined') && window || global;
+
+  public get isNode(): boolean {
+    return this._isNode;
+  }
+
+  public get isBrowser(): boolean {
+    return !this._isNode;
+  }
+
+  public get global(): Window | Global {
+    return this._global;
+  }
+}
+
+export const dynaUniversal: DynaUniversal = new DynaUniversal();
+export const isNode: boolean = dynaUniversal.isNode;
+export const isBrowser: boolean = dynaUniversal.isBrowser;
+export const universal: Window | Global = dynaUniversal.global;
+
+(universal as any).universal = universal;
+(universal as any).dynaUniversal = dynaUniversal;
+
+
