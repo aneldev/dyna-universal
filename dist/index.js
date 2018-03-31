@@ -83,13 +83,41 @@ return /******/ (function(modules) { // webpackBootstrap
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isNode = function () { return !!(typeof process !== 'undefined' && process.versions && process.versions.node); };
-exports.isBrowser = function () { return !exports.isNode(); };
-var env = (typeof window !== 'undefined') && window || global;
-exports.env = env;
-env.env = env;
-env.isNode = exports.isNode();
-env.isBrowser = !env.isNode;
+var DynaUniversal = /** @class */ (function () {
+    function DynaUniversal() {
+        this._isNode = !!(typeof process !== 'undefined' && process.versions && process.versions.node);
+        this._global = (typeof window !== 'undefined') && window || global;
+    }
+    Object.defineProperty(DynaUniversal.prototype, "isNode", {
+        get: function () {
+            return this._isNode;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DynaUniversal.prototype, "isBrowser", {
+        get: function () {
+            return !this._isNode;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DynaUniversal.prototype, "global", {
+        get: function () {
+            return this._global;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return DynaUniversal;
+}());
+exports.DynaUniversal = DynaUniversal;
+exports.dynaUniversal = new DynaUniversal();
+exports.isNode = exports.dynaUniversal.isNode;
+exports.isBrowser = exports.dynaUniversal.isBrowser;
+exports.universal = exports.dynaUniversal.global;
+exports.universal.universal = exports.universal;
+exports.universal.dynaUniversal = exports.dynaUniversal;
 
 
 /***/ }),
