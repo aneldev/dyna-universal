@@ -26,7 +26,7 @@ const config = {
     extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx"]
   },
   module: {
-    loaders: loaders
+    loaders: loaders,
   },
   node: {
     // universal app? place here your conditional imports for node env
