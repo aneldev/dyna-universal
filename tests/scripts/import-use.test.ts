@@ -4,8 +4,8 @@ if (typeof jasmine !== 'undefined') jasmine.DEFAULT_TIMEOUT_INTERVAL = 5000;
 import {
   dynaUniversal,
   isBrowser,
-  isNode
-} from '../../src/index';
+  isNode,
+} from '../../src';
 
 describe('Dyna Universal tools - import use', () => {
 	it('should return a value isBrowser', () => {

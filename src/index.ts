@@ -27,5 +27,3 @@ export const universal: Window | Global = dynaUniversal.global;
 
 (universal as any).universal = universal;
 (universal as any).dynaUniversal = dynaUniversal;
-
-

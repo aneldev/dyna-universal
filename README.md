@@ -6,69 +6,56 @@ Small library for universal issues (browser-nodeJs war).
 
 ## Use it with import
 ```
-import {envGlobal, isBrowser, isNode} from 'dyna-universal';
+import {universal, dynaUniversal, isBrowser, isNode} from 'dyna-universal';
 
-// we import the `envGlobal`
-envGlobal;            // is the node.js's global or browser's window
-envGlobal.isNode;     // boolean if we are in node
-envGlobal.isBrowser;  // boolean is we are is browser
+universal;      // is the node.js's global or browser's window
+dynaUniversal	// the DynaUniversal instance, is offers some tools 
+isNode;     	// boolean if we are in node
+isBrowser;  	// boolean is we are is browser
 
 // console them
-console.log('Are we are under node? Answer: ', envGlobal.isNode);       // writes, true or false
-console.log('Are we are under browser? Answer: ', envGlobal.isBrowser); // writes, true or false
-
-// we can import the functions also from it
-console.log('Are we are under node? Answer: ', isNode());       // writes, true or false
-console.log('Are we are under browser? Answer: ', isBrowser()); // writes, true or false
+console.log('Are we are under node? Answer: ', dynaUniversal.isNode);       // writes, true or false
+console.log('Are we are under browser? Answer: ', dynaUniversal.isBrowser); // writes, true or false
+console.log('Are we are under node? Answer: ', isNode);       // writes, true or false
+console.log('Are we are under browser? Answer: ', isBrowser); // writes, true or false
 
 ```
 ## Use it with globals
 ```
 import 'dyna-universal';
 
-console.log('Are we are under node? Answer: ', envGlobal.isNode);       // writes, true or false
-console.log('Are we are under browser? Answer: ', envGlobal.isBrowser); // writes, true or false
+console.log('Are we are under node? Answer: ', dynaUniversal.isNode);       // writes, true or false
+console.log('Are we are under browser? Answer: ', dynaUniversal.isBrowser); // writes, true or false
 
 ```
 
-# Exported methods
+# Exported properties
 
-## isNode():boolean
+## isNode: boolean
 
-Returns if it run under node.js
+Returns if it runs under node.js
  
-## isBrowser():boolean
+## isBrowser: boolean
 
-Returns if it run under a browser.
+Returns if it runs under browser.
 
 # Exported variables
 
-## envGlobal: any
+## universal: Window | Global
 
 Is the node.js's `global` or browser's `window`.
 
-## envGlobal.isNode: boolean
+## dynaUniversal: DynaUniversal
 
-Is the result of the `isNode`, no need to call again the `isNode()`;
+Instance of DynaUniversal providing some universal environment tools  
 
-In node.js you can eval `isNode` == `true`;
 
-In browser you can eval `isNode` == `false`;
+# version
 
-## envGlobal.isBrowser: boolean
+We follow semver.
 
-Is the result of the `isBrowser`, no need to call again the `isBrowser()`;
+# v0 beta
 
-In node.js you can eval `isBrowser` == `true`;
+# v1 1st official
 
-In browser you can eval `isBrowser` == `false`;
-
-# Global definition
-
-_Only one._
-
-## envGlobal
-
-The `envGlobal` variable (where is the node.js's `global` or browser's `window`) is assigned globally.
-
-So globally you can use the `envGlobal` without import it.
+Has many breaking changes with v0.
