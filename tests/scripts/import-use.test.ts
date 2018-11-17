@@ -5,7 +5,7 @@ import {
   dynaUniversal,
   isBrowser,
   isNode,
-} from '../../src';
+} from '../../src/index';
 
 describe('Dyna Universal tools - import use', () => {
 	it('should return a value isBrowser', () => {

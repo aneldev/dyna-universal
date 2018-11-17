@@ -5,7 +5,7 @@ if (typeof jasmine !== 'undefined') jasmine.DEFAULT_TIMEOUT_INTERVAL = 5000;
 import '../../src/index';
 
 // import the type only but not the references, they should be on global object
-import {DynaUniversal} from "../../src";
+import {DynaUniversal} from "../../src/index";
 
 // declare the types only
 declare const dynaUniversal: DynaUniversal;

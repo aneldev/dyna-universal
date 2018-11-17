@@ -9,7 +9,7 @@ import {
   dynaUniversal as duEnv,
   isBrowser as duIsBrowser,
   isNode as duIsNode
-} from '../../src';
+} from '../../src/index';
 
 describe('Dyna Universal tools - mix use', () => {
   it('should return a value isBrowser()', () => {

@@ -21,7 +21,7 @@
     ]
   },
   "files": [
-    "src/index.ts",
+    "src/index.js",
     "src/node.ts",
     "src/web.ts"
   ],
