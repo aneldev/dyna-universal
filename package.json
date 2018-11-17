@@ -11,7 +11,7 @@
   "scripts": {
     "release": "yarn run publish-push",
     "publish-push": "git add -u && git add -A && git commit -m \"last minute changes\"; yarn version --patch && npm publish && git push && git push --tags",
-    "test-publish-push": "yarn test && yarn version --patch && npm publish && git push && git push --tags"
+    "test-publish-push": "yarn test && npm publish && git push && git push --tags"
   },
   "keywords": [],
   "author": "Anel dev",
