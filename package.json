@@ -9,9 +9,7 @@
   "sideEffects": false,
   "main": "./src/index.js",
   "scripts": {
-    "release": "yarn run publish-push",
-    "publish-push": "git add -u && git add -A && git commit -m \"last minute changes\"; yarn publish && git push && git push --tags",
-    "test-publish-push": "yarn test && yarn publish && git push && git push --tags"
+    "release": "git add -u && git add -A && git commit -m \"last minute changes\"; yarn version --patch && yarn publish && git push && git push --tags"
   },
   "keywords": [],
   "author": "Anel dev",
